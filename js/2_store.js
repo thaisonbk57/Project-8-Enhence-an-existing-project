@@ -83,13 +83,16 @@
 
     callback = callback || function() {};
 
-    // Generate an ID
-    var newId = "";
-    var charset = "0123456789";
+    // Generate an ID using Timestamp
+    var newId = new Date().getTime();
 
-    for (var i = 0; i < 6; i++) {
-      newId += charset.charAt(Math.floor(Math.random() * charset.length));
-    }
+    // var charset = "0123456789";
+    // var len = 6;
+
+    // // randomly create an ID from charset with ID.length = len;
+    // for (var i = 0; i < len; i++) {
+    //   newId += charset.charAt(Math.floor(Math.random() * charset.length));
+    // }
 
     // If an ID was actually given, find the item and update each property
     if (id) {

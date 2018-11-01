@@ -1,6 +1,6 @@
 (function(window) {
   "use strict";
-
+  // debugger;
   /**
    * Takes a model and view and acts as the controller between them
    *
