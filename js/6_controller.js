@@ -162,11 +162,12 @@
       items = data;
     });
 
-    items.forEach(function(item) {
-      if (item.id === id) {
-        console.log("Element with ID: " + id + " has been removed.");
-      }
-    });
+    // @TODO: dont need to add a forEach loop here to slow down the performance
+    // items.forEach(function(item) {
+    //   if (item.id === id) {
+    //     console.log("Element with ID: " + id + " has been removed.");
+    //   }
+    // });
 
     self.model.remove(id, function() {
       self.view.render("removeItem", id);
