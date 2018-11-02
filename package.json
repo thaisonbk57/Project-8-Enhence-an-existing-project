@@ -5,15 +5,7 @@
     "todomvc-app-css": "^2.0.1"
   },
   "devDependencies": {
-    "istanbul": "^0.4.5",
-    "jasmine-core": "^2.99.1",
-    "karma": "^3.1.1",
-    "karma-chrome-launcher": "^2.2.0",
-    "karma-cli": "^1.0.1",
-    "karma-coverage": "^1.1.2",
-    "karma-jasmine": "^1.1.2",
-    "karma-jasmine-matchers": "^3.8.3",
-    "puppeteer": "^1.9.0"
+    "jasmine-core": "^2.99.1"
   },
   "name": "project-8",
   "description": "Writing Tests to test a program using Jasmine JS",

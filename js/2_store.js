@@ -1,6 +1,6 @@
 /*jshint eqeqeq:false */
 (function(window) {
-  "use strict";
+  'use strict';
 
   /**
    * Creates a new client side storage object and will create an empty
