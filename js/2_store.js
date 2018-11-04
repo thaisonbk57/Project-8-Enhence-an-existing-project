@@ -87,10 +87,9 @@
     var newId = new Date().getTime();
 
     // var charset = "0123456789";
-    // var len = 6;
 
     // // randomly create an ID from charset with ID.length = len;
-    // for (var i = 0; i < len; i++) {
+    // for (var i = 0; i < 6; i++) {
     //   newId += charset.charAt(Math.floor(Math.random() * charset.length));
     // }
 
@@ -126,16 +125,19 @@
   Store.prototype.remove = function(id, callback) {
     var data = JSON.parse(localStorage[this._dbName]);
     var todos = data.todos;
-    var todoId;
+
+    // @TODO: remove the first for loop, because it is not necessary
+
+    // var todoId;
+
+    // for (var i = 0; i < todos.length; i++) {
+    //   if (todos[i].id == id) {
+    //     todoId = todos[i].id;
+    //   }
+    // }
 
     for (var i = 0; i < todos.length; i++) {
       if (todos[i].id == id) {
-        todoId = todos[i].id;
-      }
-    }
-
-    for (var i = 0; i < todos.length; i++) {
-      if (todos[i].id == todoId) {
         todos.splice(i, 1);
       }
     }
