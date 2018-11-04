@@ -17,9 +17,9 @@
    * @param {string} [title] The title of the task
    * @param {function} [callback] The callback to fire after the model is created
    */
-  Model.prototype.create = function(title, callback) {
-    title = title || '';
-    callback = callback || function() {};
+  Model.prototype.create = function(title = '', callback = function() {}) {
+    // title = title || '';
+    // callback = callback || function() {};
 
     var newItem = {
       title: title.trim(),
@@ -44,9 +44,10 @@
    * //Below will find a model with foo equalling bar and hello equalling world.
    * model.read({ foo: 'bar', hello: 'world' });
    */
-  Model.prototype.read = function(query, callback) {
+  Model.prototype.read = function(query, callback = function() {}) {
+    // debugger;
     var queryType = typeof query;
-    callback = callback || function() {};
+    // callback = callback || function() {};
 
     if (queryType === 'function') {
       callback = query;

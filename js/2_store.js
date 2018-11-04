@@ -10,8 +10,8 @@
    * @param {function} callback Our fake DB uses callbacks because in
    * real life you probably would be making AJAX calls
    */
-  function Store(name, callback) {
-    callback = callback || function() {};
+  function Store(name, callback = function() {}) {
+    // callback = callback || function() {};
 
     this._dbName = name;
 
@@ -64,8 +64,8 @@
    *
    * @param {function} callback The callback to fire upon retrieving data
    */
-  Store.prototype.findAll = function(callback) {
-    callback = callback || function() {};
+  Store.prototype.findAll = function(callback = function() {}) {
+    // callback = callback || function() {};
     callback.call(this, JSON.parse(localStorage[this._dbName]).todos);
   };
 
@@ -77,11 +77,11 @@
    * @param {function} callback The callback to fire after saving
    * @param {number} id An optional param to enter an ID of an item to update
    */
-  Store.prototype.save = function(updateData, callback, id) {
+  Store.prototype.save = function(updateData, callback = function() {}, id) {
     var data = JSON.parse(localStorage[this._dbName]);
     var todos = data.todos;
 
-    callback = callback || function() {};
+    // callback = callback || function() {};
 
     // Generate an ID using Timestamp
     var newId = new Date().getTime();
@@ -151,6 +151,7 @@
    *
    * @param {function} callback The callback to fire after dropping the data
    */
+  //@TODO: is this method needed?
   Store.prototype.drop = function(callback) {
     var data = { todos: [] };
     localStorage[this._dbName] = JSON.stringify(data);
