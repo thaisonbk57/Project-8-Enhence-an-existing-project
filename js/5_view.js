@@ -47,11 +47,13 @@
 
   View.prototype._setFilter = function(currentPage) {
     qs('.filters .selected').className = '';
-    qs('.filters [href="#/' + currentPage + '"]').className = 'selected';
+    // qs('.filters [href="#/' + currentPage + '"]').className = 'selected';
+    qs(`.filters [href="#/${currentPage}"]`).className = 'selected';
   };
 
   View.prototype._elementComplete = function(id, completed) {
-    var listItem = qs('[data-id="' + id + '"]');
+    var listItem = qs(`[data-id="${id}"]`);
+    // var listItem = qs('[data-id="' + id + '"]');
 
     if (!listItem) {
       return;
@@ -64,13 +66,13 @@
   };
 
   View.prototype._editItem = function(id, title) {
-    var listItem = qs('[data-id="' + id + '"]');
+    var listItem = qs(`[data-id="${id}"]`);
 
     if (!listItem) {
       return;
     }
 
-    listItem.className = listItem.className + ' editing';
+    listItem.className += ' editing';
 
     var input = document.createElement('input');
     input.className = 'edit';
@@ -81,7 +83,7 @@
   };
 
   View.prototype._editItemDone = function(id, title) {
-    var listItem = qs('[data-id="' + id + '"]');
+    var listItem = qs(`[data-id="${id}"]`);
 
     if (!listItem) {
       return;
@@ -137,7 +139,7 @@
       }
     };
 
-    viewCommands[viewCmd]();
+    viewCommands[viewCmd].call(self);
   };
 
   View.prototype._itemId = function(element) {
