@@ -94,14 +94,23 @@
 
     listItem.className = listItem.className.replace('editing', '');
 
-    qsa('label', listItem).forEach(function(label) {
-      label.textContent = title;
-    });
+    //@TODO: there is only one <label> inside listItem scope, so we dont need to use a loop here.
+    // qsa('label', listItem).forEach(function(label) {
+    //   label.textContent = title;
+    // });
+    qs('label', listItem).textContent = title;
   };
 
+  /*
+  *
+  * @param(parameter): array: contains todoItems {id: number:, title:string:, completed: Boolean:}
+  *
+  * @param(viewCmd) : String
+  * 
+  */
   View.prototype.render = function(viewCmd, parameter) {
-    var self = this;
-    var viewCommands = {
+    const self = this;
+    const viewCommands = {
       showEntries: function() {
         self.$todoList.innerHTML = self.template.show(parameter);
       },
@@ -143,7 +152,7 @@
   };
 
   View.prototype._itemId = function(element) {
-    var li = $parent(element, 'li');
+    const li = $parent(element, 'li');
     return parseInt(li.dataset.id, 10);
   };
 
