@@ -28,7 +28,8 @@
   }
 
   View.prototype._removeItem = function(id) {
-    var elem = qs('[data-id="' + id + '"]');
+    // use string template instead of concatenation operator
+    var elem = qs(`[data-id="${id}"]`);
 
     if (elem) {
       this.$todoList.removeChild(elem);
@@ -36,8 +37,12 @@
   };
 
   View.prototype._clearCompletedButton = function(completedCount, visible) {
-    this.$clearCompleted.innerHTML = this.template.clearCompletedButton(1);
-    this.$clearCompleted.style.display = visible ? 'block' : 'none';
+    this.$clearCompleted.innerHTML = this.template.clearCompletedButton(
+      completedCount
+    );
+    //@TODO
+    // no need to use visible parameter, because this.template.clearCompleteButton returns:  Clear completed || ""
+    // this.$clearCompleted.style.display = visible ? 'block' : 'none';
   };
 
   View.prototype._setFilter = function(currentPage) {
