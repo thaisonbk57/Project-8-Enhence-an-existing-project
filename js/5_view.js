@@ -40,7 +40,7 @@
     this.$clearCompleted.innerHTML = this.template.clearCompletedButton(
       completedCount
     );
-    //@TODO
+    //@MOD
     // no need to use visible parameter, because this.template.clearCompleteButton returns:  Clear completed || ""
     // this.$clearCompleted.style.display = visible ? 'block' : 'none';
   };
@@ -94,7 +94,7 @@
 
     listItem.className = listItem.className.replace('editing', '');
 
-    //@TODO: there is only one <label> inside listItem scope, so we dont need to use a loop here.
+    //@MOD: there is only one <label> inside listItem scope, so we dont need to use a loop here.
     // qsa('label', listItem).forEach(function(label) {
     //   label.textContent = title;
     // });

@@ -47,7 +47,7 @@
     var queryType = typeof query;
     // callback = callback || function() {};
 
-    //@TODO: what is the purpose of this function?
+    //@QUESTION: what is the purpose of this function?
 
     if (queryType === 'function') {
       callback = query;

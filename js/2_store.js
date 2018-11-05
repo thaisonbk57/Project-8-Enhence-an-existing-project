@@ -126,7 +126,7 @@
     var data = JSON.parse(localStorage[this._dbName]);
     var todos = data.todos;
 
-    // @TODO: remove the first for loop, because it is not necessary
+    // @MOD: remove the first for loop, because it is not necessary
 
     // var todoId;
 
@@ -151,7 +151,7 @@
    *
    * @param {function} callback The callback to fire after dropping the data
    */
-  //@TODO: is this method needed?
+  //@QUESTION: is this method needed?
   Store.prototype.drop = function(callback) {
     var data = { todos: [] };
     localStorage[this._dbName] = JSON.stringify(data);
