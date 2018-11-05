@@ -20,7 +20,6 @@
   Model.prototype.create = function(title = '', callback = function() {}) {
     // title = title || '';
     // callback = callback || function() {};
-
     var newItem = {
       title: title.trim(),
       completed: false
@@ -45,9 +44,10 @@
    * model.read({ foo: 'bar', hello: 'world' });
    */
   Model.prototype.read = function(query, callback = function() {}) {
-    // debugger;
     var queryType = typeof query;
     // callback = callback || function() {};
+
+    //@TODO: what is the purpose of this function?
 
     if (queryType === 'function') {
       callback = query;
