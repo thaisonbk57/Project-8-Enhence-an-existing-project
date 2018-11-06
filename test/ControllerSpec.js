@@ -254,6 +254,7 @@ describe('controller', function() {
       // trigger the Event: toggleAll
       view.trigger('toggleAll', { completed: true });
     });
+
     it('should toggle all todos to completed', function() {
       // TODO: write test
       // else if (event === 'toggleAll') {
@@ -293,6 +294,29 @@ describe('controller', function() {
       let todos = [];
       setUpModel(todos);
       controller.setView('');
+
+      //    if (event === 'newTodo') {
+      // $on(self.$newTodo, 'change', function() {
+      //   handler(self.$newTodo.value);
+      // });
+
+      view.trigger('newTodo', 'a new todo');
+
+      // Model.prototype.create = function(title = '', callback = function() {}) {
+      //   // title = title || '';
+      //   // callback = callback || function() {};
+      //   var newItem = {
+      //     title: title.trim(),
+      //     completed: false
+      //   };
+
+      //   this.storage.save(newItem, callback);
+      // };
+
+      expect(model.create).toHaveBeenCalledWith(
+        'a new todo',
+        jasmine.any(Function)
+      );
     });
 
     it('should add a new todo to the view', function() {
@@ -337,6 +361,21 @@ describe('controller', function() {
   describe('element removal', function() {
     it('should remove an entry from the model', function() {
       // TODO: write test
+      // Model.prototype.remove = function(id, callback) {
+      //   this.storage.remove(id, callback);
+      // };
+
+      const todos = [
+        { title: 'todo1', completed: false, id: 1 },
+        { title: 'todo2', completed: false, id: 2 },
+        { title: 'todo3', completed: false, id: 3 }
+      ];
+
+      setUpModel(todos);
+      controller.setView('');
+      view.trigger('itemRemove', { id: 1 });
+
+      expect(model.remove).toHaveBeenCalledWith(1, jasmine.any(Function));
     });
 
     it('should remove an entry from the view', function() {
