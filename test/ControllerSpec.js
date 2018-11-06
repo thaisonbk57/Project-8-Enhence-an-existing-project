@@ -214,11 +214,11 @@ describe('controller', function() {
     let currentPage = ''; // by default
     setUpModel(todos);
     controller.setView(currentPage); // default view
+    // view.render should be called and added class 'selected' to the All filter.
     expect(view.render).toHaveBeenCalledWith('setFilter', currentPage);
   });
 
   it('should highlight "Active" filter when switching to active view', function() {
-    // TODO: write test
     // TODO: write test
     // View.prototype._setFilter = function(currentPage) {
     //   qs('.filters .selected').className = '';
@@ -261,6 +261,7 @@ describe('controller', function() {
       //   $on(self.$toggleAll, 'click', function() {
       //     handler({ completed: this.checked });
       //   });
+
       // the model should then update all todo-item
       for (let todo of this.todos) {
         expect(model.update).toHaveBeenCalledWith(
