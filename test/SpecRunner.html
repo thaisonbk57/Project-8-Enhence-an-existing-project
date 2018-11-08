@@ -1,41 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+  <head>
+    <title>SPEC RUNNER</title>
 
-<head>
-	<title>SPEC RUNNER</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/jasmine-core/lib/jasmine-core/jasmine.css"
+    />
+    <script src="../node_modules/jasmine-core/lib/jasmine-core/jasmine.js"></script>
+    <script src="../node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
+    <script src="../node_modules/jasmine-core/lib/jasmine-core/boot.js"></script>
+  </head>
 
-	<link rel="stylesheet" href="../node_modules/jasmine-core/lib/jasmine-core/jasmine.css">
-	<script src="../node_modules/jasmine-core/lib/jasmine-core/jasmine.js"></script>
-	<script src="../node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
-	<script src="../node_modules/jasmine-core/lib/jasmine-core/boot.js"></script>
-</head>
+  <body>
+    <script>
+      // Bootstrap app data
+      window.app = {};
+    </script>
 
-<body>
+    <script src="../js/6_controller.js"></script>
 
-
-
-	<script>
-		// Bootstrap app data
-		window.app = {};
-	</script>
-
-
-	<!-- include source file here -->
-	<!-- <script src="../js/1_helpers.js"></script> -->
-	<!-- <script src="../js/2_store.js"></script> -->
-	<!-- <script src="../js/3_model.js"></script> -->
-	<!-- <script src="../js/4_template.js"></script> -->
-	<!-- <script src="../js/5_view.js"></script> -->
-	<script src="../js/6_controller.js"></script>
-	<!-- <script src="../js/7_app.js"></script> -->
-
-
-
-
-	<!-- include spec files here... -->
-	<script src="ControllerSpec.js"></script>
-
-
-</body>
-
+    <!-- include spec files here... -->
+    <script src="ControllerSpec.js"></script>
+  </body>
 </html>
